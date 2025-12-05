@@ -18,7 +18,7 @@ public class RobotContainer {
                                                               ()-> driver.getLeftX())
                                                               .withControllerRotationAxis(driver::getRightX)
                                                               .deadband(Constants.stickDeadband)
-                                                              .scaleTranslation(0.8)
+                                                              .scaleTranslation(0.4)
                                                               .allianceRelativeControl(true);
                                                                
     SwerveInputStream driveHeading = driveAngularVelo.copy().withControllerHeadingAxis(driver::getRightX,
