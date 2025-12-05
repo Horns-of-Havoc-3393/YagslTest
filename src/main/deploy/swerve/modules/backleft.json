@@ -5,19 +5,19 @@
   },
   "absoluteEncoderOffset": 0,
   "drive": {
-    "type": "krakenx60",
+    "type": "krakenx60foc",
     "id": 3,
-    "canbus": null
+    "canbus": "rio"
   },
   "angle": {
-    "type": "falcon",
+    "type": "falcon500foc",
     "id": 7,
-    "canbus": null
+    "canbus": "rio"
   },
   "encoder": {
     "type": "cancoder",
     "id": 11,
-    "canbus": null
+    "canbus": "rio"
   },
   "inverted": {
     "drive": false,

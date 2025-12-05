@@ -34,7 +34,7 @@ public class SwerveSubsystem extends SubsystemBase {
     try{
       swerveDrive = new SwerveParser(directory).createSwerveDrive(Constants.max_speed, new Pose2d(new Translation2d(Meter.of(1),Meter.of(4)),Rotation2d.fromDegrees(0)));  
     }catch(Exception e){
-      new RuntimeException(e);
+       throw new RuntimeException(e);
     }
     //swerveDrive.setCosineCompensator(false);
     //swerveDrive.setHeadingCorrection(false);

@@ -6,12 +6,12 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
-    private final SwerveSubsystem drivebase = new SwerveSubsystem();
     private final CommandXboxController driver = new CommandXboxController(Constants.OperatorConstants.kDriverControllerPort);
+    public SwerveSubsystem drivebase = new SwerveSubsystem();
 
     public RobotContainer() {
         configureBindings();
-        drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+        //drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
     }
     SwerveInputStream driveAngularVelo = SwerveInputStream.of(drivebase.getSwerveDrive(),
                                                               ()-> driver.getLeftY(),
