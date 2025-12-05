@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import static edu.wpi.first.units.Units.Meter;
 
 import java.io.File;
+import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 
 import edu.wpi.first.math.geometry.Pose2d;
@@ -18,6 +19,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import swervelib.SwerveDrive;
+import swervelib.math.SwerveMath;
 import swervelib.parser.SwerveParser;
 import swervelib.telemetry.SwerveDriveTelemetry;
 import swervelib.telemetry.SwerveDriveTelemetry.TelemetryVerbosity;
@@ -34,6 +36,7 @@ public class SwerveSubsystem extends SubsystemBase {
     try{
       swerveDrive = new SwerveParser(directory).createSwerveDrive(Constants.max_speed, new Pose2d(new Translation2d(Meter.of(1),Meter.of(4)),Rotation2d.fromDegrees(0)));  
     }catch(Exception e){
+        e.printStackTrace();
        throw new RuntimeException(e);
     }
     //swerveDrive.setCosineCompensator(false);
@@ -53,7 +56,6 @@ public class SwerveSubsystem extends SubsystemBase {
           /* one-time action goes here */
         });
   }
-
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
    *

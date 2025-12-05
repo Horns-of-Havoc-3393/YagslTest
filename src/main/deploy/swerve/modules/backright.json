@@ -3,21 +3,21 @@
     "front": -15,
     "left": -15
   },
-  "absoluteEncoderOffset": 0,
+  "absoluteEncoderOffset": 315.17,
   "drive": {
     "type": "krakenx60foc",
-    "id": 2,
+    "id": 4,
     "canbus": "rio"
   },
   "angle": {
-    "type": "falcon500foc",
-    "id": 6,
-    "canbus": "rio"
+    "type": "falcon",
+    "id": 8,
+    "canbus": ""
   },
   "encoder": {
     "type": "cancoder",
-    "id": 10,
-    "canbus": "rio"
+    "id": 12,
+    "canbus": ""
   },
   "inverted": {
     "drive": false,
