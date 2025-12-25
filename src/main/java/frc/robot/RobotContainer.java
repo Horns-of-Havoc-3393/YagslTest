@@ -3,6 +3,7 @@ package frc.robot;
 import frc.robot.subsystems.SwerveSubsystem;
 import swervelib.SwerveInputStream;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
@@ -11,7 +12,7 @@ public class RobotContainer {
 
     public RobotContainer() {
         configureBindings();
-        drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
+    drivebase.setDefaultCommand(driveFieldOrientedAngularVelocity);
     }
     SwerveInputStream driveAngularVelo = SwerveInputStream.of(drivebase.getSwerveDrive(),
                                                               ()-> driver.getLeftY()*-1,
@@ -29,6 +30,7 @@ public class RobotContainer {
     Command driveFieldOrientedDirectAngle = drivebase.driveFieldOriented(driveHeading);
     Command driveFieldOrientedAngularVelocity = drivebase.driveFieldOriented(driveAngularVelo);
     private void configureBindings() {
+        driver.start().onTrue(new InstantCommand(()->{drivebase.YawReset();},drivebase));
     }
     public Command getAutonomousCommand() {
         return null; // fill in later

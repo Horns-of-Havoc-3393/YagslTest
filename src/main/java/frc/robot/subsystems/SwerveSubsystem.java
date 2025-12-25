@@ -84,4 +84,10 @@ public class SwerveSubsystem extends SubsystemBase {
       swerveDrive.driveFieldOriented(velocity.get());
     });
   }
+  public void YawReset(){
+    
+      swerveDrive.zeroGyro();
+      System.out.println("reset Yaw");
+    
+  }
 }
