@@ -33,6 +33,6 @@ public class RobotContainer {
         driver.start().onTrue(new InstantCommand(()->{drivebase.YawReset();},drivebase));
     }
     public Command getAutonomousCommand() {
-        return null; // fill in later
+        return drivebase.getAutonomousCommand("New Auto");    
     }
 }
